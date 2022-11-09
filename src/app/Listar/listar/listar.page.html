@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>listar</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list *ngFor = "let datos of servicio.listaProd$|async">
+    <ion-item>{{datos.title}}</ion-item>
+  </ion-list>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="cart" [routerLink] = "['/carrito']"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

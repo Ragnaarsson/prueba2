@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Registrate
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form (formControlName) = "formularioRegistro">
+        <ion-label>Nombre</ion-label>
+        <ion-input></ion-input>
+        <hr>
+        <ion-label>Apellido</ion-label>
+        <ion-input ></ion-input>
+        <hr>
+        <ion-label>Edad</ion-label>
+        <ion-input></ion-input>
+        <hr>
+        <ion-label>Nombre de Usuario</ion-label>
+        <ion-input ></ion-input>
+        <hr>
+        <ion-label>Contraseña</ion-label>
+        <ion-input type="password" ></ion-input>
+        <hr>
+        <ion-label>Fecha de cumpleños</ion-label>
+        <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+        <ion-modal [keepContentsMounted]="true">
+          <ng-template>
+            <ion-datetime id="datetime"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+        <hr>
+        <ion-label>Genero</ion-label>
+        <ion-select value = "gender">
+          <ion-select-option value="male">Masculino</ion-select-option>
+          <ion-select-option value="female">Femenino</ion-select-option>
+        </ion-select>
+      </form>
+      <ion-button  [routerLink]="['/register']" (click) = "guardarUsuario()" [routerLink]>Guardar</ion-button>
+      <br>
+      <a [routerLink] = "['/register']"> Ir a login</a>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
